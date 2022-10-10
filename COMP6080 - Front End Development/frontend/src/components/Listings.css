@@ -1,0 +1,91 @@
+.airbrb-listing {
+  background-color: #fff;
+  border: 1px solid #a0a0a0;
+  margin: 5px;
+  padding: 10px;
+}
+
+.airbrb-thumbnail {
+  border-radius: 5%;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-row>.col, .form-row>[class*=col-] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.font-weight-bold {
+  font-weight: 700!important;
+}
+
+.text-lg {
+  font-size: 1.2rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem!important; 
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline .form-group {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.form-inline label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 0.5rem!important;
+  margin-right: 0.5rem!important;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+}
+
+a {
+  cursor: pointer;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #17a2b8;
+}

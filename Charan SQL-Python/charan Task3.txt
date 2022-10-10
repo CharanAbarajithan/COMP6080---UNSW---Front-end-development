@@ -1,0 +1,26 @@
+
+
+import sqlite3,sys
+
+if len(sys.argv) != 3 :
+ print("Usage:",sys.argv[0],"Actor names")
+ sys.exit(1)
+if len(sys.argv) == 3 :
+    if sys.argv[1] !='':
+	actor1= sys.argv[1]
+        actor2= sys.argv[2]
+	con = sqlite3.connect('a2.db')
+	cur = con.cursor()
+	cur.execute('WITH RECURSIVE cte(id, name, distance, message) AS (     SELECT actor.id, actor.name, 0, ''     FROM actor     WHERE actor.name = '%tom cruise%'     UNION     SELECT actor.id, actor.name, cte.distance + 1,    cte.message || '> ' || cte.name || ' was in ' ||            movie.title || ' with ' || actor.name || ' '    FROM cte     JOIN acting AS acting1 ON (cte.id = acting1.actor_id)     JOIN movie ON (acting1.movie_id = movie.id)    JOIN acting AS acting2 ON (movie.id = acting2.movie_id)     JOIN actor ON (acting2.actor_id = actor.id)     WHERE cte.id <> actor.id AND cte.distance + 1 <= 6 ), distance_table (id, distance) AS (    SELECT id, MIN(distance) AS distance     FROM cte    GROUP BY id) SELECT cte.id, cte.name, message, cte.distance FROM cte inner join actor on actor.id = cte.id LEFT JOIN distance_table ON (actor.id = distance_table.id) WHERE actor.name like '%Robert Downey Jr%' and (cte.id, cte.distance) IN (SELECT * FROM distance_table) ORDER BY cte.distance')
+    
+while True:
+ t = cur.fetchone()
+ if t == None:
+ break
+ a,b,c,d = t
+ print(d)
+con.close()
+
+
+
+

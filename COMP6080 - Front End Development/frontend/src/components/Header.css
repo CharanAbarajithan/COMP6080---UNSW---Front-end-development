@@ -1,0 +1,24 @@
+.navbar-airbrb {
+  background-color: #0596de!important;
+  padding: 0 20px;
+}
+
+.nav-item a {
+  color: #dfe0e1!important;
+}
+
+.nav-item a:hover {
+  color: #f8f9fa!important;
+}
+
+.nav-item.active a {
+  color: #f8f9fa!important;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
